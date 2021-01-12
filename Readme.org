@@ -1,8 +1,8 @@
 * Binsec/Haunted Benchmark
 This repository contains the benchmarks used for the experimental
-evaluation in the [[https://binsec.github.io/assets/publications/papers/2021-ndss.pdf][Binsec/Hauned]]
+evaluation in the [[https://binsec.github.io/assets/publications/papers/2021-ndss.pdf][Binsec/Hauned paper]].
 
-See https://github.com/binsec/haunted
+The tool can be found at https://github.com/binsec/haunted
 
 ** Setup python virtual environment
 #+BEGIN_SRC bash
