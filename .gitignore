@@ -1,0 +1,40 @@
+# ignore linux kernel
+linux/programs/linux-5.0/
+
+# ignore emacs tmp files
+*~
+**/*.el
+*_flymake.*
+**/#*
+
+# ignore libreoffice tmp files
+**/.~lock.*#
+
+# ignore python files
+**/*.pyc
+
+# ignore ida files
+**/*.id?
+**/*.nam
+**/*.til
+
+# ignore o files
+**/*.o
+
+#ignore latex generated files
+**/*.aux
+**/*.bbl
+**/*.blg
+**/*.log
+**/*.out
+**/*.bcf
+**/*.nav
+**/*.run.xml
+**/*.snm
+**/*.toc
+**/*.vrb
+**/*-blx.bib
+**/_region_.*
+
+# ignore venv
+venv/

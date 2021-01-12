@@ -1,0 +1,3 @@
+# Setting esp and ebp
+esp<32>:=0xffffcc18;
+ebp<32>:=0xffffcc38;

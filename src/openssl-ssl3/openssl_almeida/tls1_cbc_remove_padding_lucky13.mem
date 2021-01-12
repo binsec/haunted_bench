@@ -1,0 +1,6 @@
+# Setting memcmp function to __memset_cmp32
+@[0x080EA02C, 4] := 0x0805C370;
+
+# Setting esp
+ebp<32>:=0xffffcc28;
+esp<32>:=0xffffca40;

@@ -1,0 +1,7 @@
+# Setting memset function to __memset_ia32
+# @[0x081CF010, 4] := 0x08109E50;
+
+
+# Setting esp
+ebp<32>:=0xffffcc38;
+esp<32>:=0xffffc400;

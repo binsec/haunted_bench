@@ -1,0 +1,18 @@
+# Setting esp
+esp<32>:=0xffffcabc;
+ebp<32>:=0x00000000;
+
+# Setting gs
+gs_base<32>:=0xf7f00000;
+
+# Initialize md_out_size
+@[0x080E6070,4] from_file;
+
+# Initialize data_plus_mac_plus_padding_size
+@[0x080E606C,4] from_file;
+
+# Initialize is_sslv3
+@[0x080E7300,4] from_file;
+
+# Setting canary to 0
+@[0x00000014 + gs_base<32>,4] := 0x00000000;

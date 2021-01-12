@@ -1,0 +1,10 @@
+* Compilation of libsodium
+This is ~libsodium~ version 1.0.18 compiled with the following
+options:
+
+#+BEGIN_SRC bash
+cd libsodium-stable
+export CFLAGS='-m32 -march=i386 -static'
+./configure --host=i386 --prefix=$PWD/../libsodium
+make install
+#+END_SRC

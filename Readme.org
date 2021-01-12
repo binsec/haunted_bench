@@ -1,0 +1,37 @@
+* Binsec/Haunted Benchmark
+This repository contains the benchmarks used for the experimental
+evaluation in the [[https://binsec.github.io/assets/publications/papers/2021-ndss.pdf][Binsec/Hauned]]
+
+See https://github.com/binsec/haunted
+
+** Setup python virtual environment
+#+BEGIN_SRC bash
+virtualenv venv
+source venv/bin/activate
+pip install -r ./requirements.txt
+#+END_SRC
+
+** Overview of the repository
+Tables found in the paper can be reconstructed by running =python
+stats.py=.
+
+Programs to analyze are located in =src/[program_name]=. The directory
+contains a script to run the experiments (=expes.py=), and results can
+be found in the =stat= subdirectory. Note that to run the script
+=expes.py=, you need Binsec/Haunted in you path.
+
+** Example: Spectre-PHT litmus tests (litmus-PHT in the paper)
+First, got to =src/spectrev1=. To run Binsec/Haunted on these litmus
+tests, just run =python expes.py=. This will run the litmus tests
+first with /Explicit/ and second with /Haunted/ exploration
+strategies.
+
+If you only want to run the fastest (/Haunted/) exploration strategy,
+just comment the line running /Explicit/ in the script.
+
+* Litmus tests for Spectre-STL
+Similar to [[https://www.paulkocher.com/doc/MicrosoftCompilerSpectreMitigation.html][Paul Kockers's set of litmus tests for Spectre-PHT]], we
+propose a new set of litmus tests for Spectre-SLT in
+[[src/litmus-stl/programs/spectrev4.c]]
+
+
