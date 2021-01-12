@@ -21,9 +21,10 @@ be found in the =stat= subdirectory. Note that to run the script
 =expes.py=, you need Binsec/Haunted in you path.
 
 ** Example: Spectre-PHT litmus tests (litmus-PHT in the paper)
-First, got to =src/spectrev1=. To run Binsec/Haunted on these litmus
+First, got to =src/litmus-pht=. To run Binsec/Haunted on these litmus
 tests, just run =python expes.py=. This will run the litmus tests
-first with /Explicit/ and second with /Haunted/ exploration
+first for constant-time without speculation (NoSpec in the paper),
+second with /Explicit/ and third with /Haunted/ exploration
 strategies.
 
 If you only want to run the fastest (/Haunted/) exploration strategy,
