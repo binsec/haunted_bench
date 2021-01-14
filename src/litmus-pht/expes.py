@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import sys
-sys.path.insert(1, '../../../python_scripts/')
+sys.path.insert(1, '../../python_scripts/')
 import params as P
 import benchs as B
 import libxp as E
