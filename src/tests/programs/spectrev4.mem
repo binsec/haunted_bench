@@ -1,0 +1,6 @@
+# Setting esp and ebp
+esp<32>:=0xffffcc18;
+ebp<32>:=0x00000000;
+
+# Initialize case6_idx
+@[0x081093A0,4] from_file;

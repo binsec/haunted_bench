@@ -6,27 +6,15 @@ from scipy import stats
 ############
 # Useful projections
 ############
-PROJ_FULL = ['x86instructions', 'paths', 'transient_paths_pht',
-             'transient_paths_stl', 'Explor total', 'Insec total',
-             'Total total', 'Explor time', 'Insec time', 'wall time',
-             'violations', 'timeouts']
-PROJ_MINIMAL = ['paths', 'Total total', 'wall time', 'secure',
-                'insecure', 'unknown', 'violations', 'timeouts']
-# PROJ_FULL_STL = ['x86instructions', 'paths',
-#                  'transient_paths_stl', 'Explor total', 'Insec total',
-#                  'Total total', 'Explor time', 'Insec time',
-#                  'wall time', 'violations', 'timeouts', 'secure',
-#                  'insecure', 'unknown']
-# PROJ_FULL_STL = ['addresses', 'x86instructions', 'paths', 'Total total',
-#                  'wall time', 'violations', 'timeouts',
-#                  'secure', 'insecure']
-# PROJ_FULL_PHT = ['addresses', 'x86instructions', 'paths', 'Total total',
-#                  'wall time', 'violations', 'timeouts',
-#                  'secure', 'insecure']
 PROJ_FULL_STL = ['addresses', 'paths', 'wall time',
                  'violations', 'timeouts', 'secure', 'insecure']
 PROJ_FULL_PHT = ['addresses', 'paths', 'wall time',
                  'violations', 'timeouts', 'secure', 'insecure']
+PROJ_FULL = ['label', 'pht_status', 'stl_status', 'addresses',
+             'paths', 'wall time', 'violations', 'timeouts', 'secure',
+             'insecure']
+PROJ_MIN = [ 'label', 'addresses', 'paths', 'wall time', 'violations',
+             'timeouts', 'secure', 'insecure']
 # factor_attributes = ['paths', 'Total total', 'wall time']
 
 
