@@ -20,15 +20,21 @@ contains a script to run the experiments (=expes.py=), and results can
 be found in the =stat= subdirectory. Note that to run the script
 =expes.py=, you need Binsec/Haunted in you path.
 
-** Example: Spectre-PHT litmus tests (litmus-PHT in the paper)
-First, got to =src/litmus-pht=. To run Binsec/Haunted on these litmus
-tests, just run =python3 expes.py=. This will run the litmus tests
-first for constant-time without speculation (NoSpec in the paper),
-second with /Explicit/ and third with /Haunted/ exploration
-strategies.
-
 If you only want to run the fastest (/Haunted/) exploration strategy,
-just comment the line running /Explicit/ in the script.
+just comment the line running /Explicit/ in the script =expes.py=.
+
+** Example: Run litmus tests for PHT and STL
+First, got to =src/tests=. Run the experiments with =python3
+expes.py=. This will run:
+- litmus tests for Spectre-PHT for constant-time without speculation
+  (NoSpec in the paper),
+- litmus tests for Spectre-STL for constant-time (NoSpec),
+- litmus tests for Spectre-PHT with the /Haunted-PHT/ exploration
+  strategy,
+- litmus tests for Spectre-STL with the /Haunted-STL/ exploration
+  strategy.
+Finally, it will output a summary of the experiments (x86
+instructions, paths, time, violations, timeouts, secure, insecure).
 
 * Litmus tests for Spectre-STL
 Similar to [[https://www.paulkocher.com/doc/MicrosoftCompilerSpectreMitigation.html][Paul Kockers's set of litmus tests for Spectre-PHT]], we
