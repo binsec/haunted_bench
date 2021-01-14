@@ -4,15 +4,15 @@ evaluation in the [[https://binsec.github.io/assets/publications/papers/2021-nds
 
 Binsec/Haunted can be found at https://github.com/binsec/haunted
 
-** Setup python virtual environment
+** Setup python virtual environment (requires python3)
 #+BEGIN_SRC bash
 virtualenv venv
 source venv/bin/activate
-pip install -r ./requirements.txt
+pip3 install numpy pandas scipy
 #+END_SRC
 
 ** Overview of the repository
-Tables found in the paper can be reconstructed by running =python
+Tables found in the paper can be reconstructed by running =python3
 stats.py=.
 
 Programs to analyze are located in =src/[program_name]=. The directory
@@ -22,7 +22,7 @@ be found in the =stat= subdirectory. Note that to run the script
 
 ** Example: Spectre-PHT litmus tests (litmus-PHT in the paper)
 First, got to =src/litmus-pht=. To run Binsec/Haunted on these litmus
-tests, just run =python expes.py=. This will run the litmus tests
+tests, just run =python3 expes.py=. This will run the litmus tests
 first for constant-time without speculation (NoSpec in the paper),
 second with /Explicit/ and third with /Haunted/ exploration
 strategies.
