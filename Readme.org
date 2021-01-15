@@ -24,7 +24,7 @@ If you only want to run the fastest (/Haunted/) exploration strategy,
 just comment the line running /Explicit/ in the script =expes.py=.
 
 ** Example: Run litmus tests for PHT and STL
-First, got to =src/tests=. Run the experiments with =python3
+First, go to =src/tests=. Run the experiments with =python3
 expes.py=. This will run:
 - litmus tests for Spectre-PHT for constant-time without speculation
   (NoSpec in the paper),
