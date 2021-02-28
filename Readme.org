@@ -36,8 +36,7 @@ will run:
 - ~litmus tests for Spectre-PHT~ for constant-time without speculation (/NoSpec/
   in the paper),
 - ~litmus tests for Spectre-STL~ for constant-time without speculation (/NoSpec/),
-- ~litmus tests for Spectre-PHT~ with the /Haunted-PHT/ exploration
-  strategy,
+- ~litmus tests for Spectre-PHT~ with the /Haunted-PHT/ exploration strategy,
 - ~litmus tests for Spectre-STL~ with the /Haunted-STL/ exploration
   strategy.
 Finally, it will output a summary of the experiments (x86 instructions, paths,
