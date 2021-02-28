@@ -1,10 +1,16 @@
 * Binsec/Haunted Benchmark
-This repository contains the benchmarks used for the experimental
-evaluation in the [[https://binsec.github.io/assets/publications/papers/2021-ndss.pdf][Binsec/Hauned paper]].
+This repository contains the programs used for the experimental evaluation of
+the [[https://binsec.github.io/assets/publications/papers/2021-ndss.pdf][paper]]
+/Hunting the Haunter — Efficient RelationalSymbolic Execution for Spectre with
+Haunted RelSE/ published at NDSS'21.
 
-Binsec/Haunted can be found at https://github.com/binsec/haunted
+The tool. Binsec/Haunted, can be found at https://github.com/binsec/haunted
 
 ** Setup python virtual environment (requires python3)
+To run the scripts, you need to setup a ~python3~ virtual environment with the
+following dependencies: ~numpy~, ~pandas~ ~scipy~.
+
+Example using ~virtualenv~:
 #+BEGIN_SRC bash
 virtualenv venv
 source venv/bin/activate
@@ -12,29 +18,44 @@ pip3 install numpy pandas scipy
 #+END_SRC
 
 ** Overview of the repository
-Tables found in the paper can be reconstructed by running =python3
-stats.py=.
+*** Processing results with ~stats.py~
+Tables found in the paper can be reconstructed by running =python3 stats.py=
 
-Programs to analyze are located in =src/[program_name]=. The directory
-contains a script to run the experiments (=expes.py=), and results can
-be found in the =stat= subdirectory. Note that to run the script
-=expes.py=, you need Binsec/Haunted in you path.
+*** Running the experiments
+Programs to analyze are located in ~src/[program_name]~. The directory contains
+a script to run the experiments, ~expes.py~, and results can be found in the
+~stat~ subdirectory. Note that to run the script ~expes.py~, you need
+Binsec/Haunted and the solver (~boolector~ by default) in you path.
 
-If you only want to run the fastest (/Haunted/) exploration strategy,
-just comment the line running /Explicit/ in the script =expes.py=.
+If you only want to run the fastest (/Haunted/) exploration strategy, just
+comment the line running /Explicit/ in the script ~expes.py~.
 
 ** Example: Run litmus tests for PHT and STL
-First, got to =src/tests=. Run the experiments with =python3
-expes.py=. This will run:
-- litmus tests for Spectre-PHT for constant-time without speculation
-  (NoSpec in the paper),
-- litmus tests for Spectre-STL for constant-time (NoSpec),
-- litmus tests for Spectre-PHT with the /Haunted-PHT/ exploration
+First, got to ~src/tests~. Run the experiments with =python3 expes.py=. This
+will run:
+- ~litmus tests for Spectre-PHT~ for constant-time without speculation (/NoSpec/
+  in the paper),
+- ~litmus tests for Spectre-STL~ for constant-time without speculation (/NoSpec/),
+- ~litmus tests for Spectre-PHT~ with the /Haunted-PHT/ exploration
   strategy,
-- litmus tests for Spectre-STL with the /Haunted-STL/ exploration
+- ~litmus tests for Spectre-STL~ with the /Haunted-STL/ exploration
   strategy.
-Finally, it will output a summary of the experiments (x86
-instructions, paths, time, violations, timeouts, secure, insecure).
+Finally, it will output a summary of the experiments (x86 instructions, paths,
+time, violations, timeouts, secure, insecure).
+
+* Troubleshooting
+** Do not use boolector 3.2.1
+We had some issues with version ~3.2.1~ of ~boolector~ taking quickly a large
+amount of memory so make sure *not to use this version*. We recommend using
+~boolector~ version ~3.2.0~.
+
+** Binsec/Haunted doesn't do anything
+If Binsec does not find the solver, it will crash silently so make sure the
+*solver is in you path*.
+
+** Having trouble debugging
+If Binsec/Haunted crashes for an unexpected reason, you can try to run it with
+~-relse-debug-level 10~ to get more insight on the problem.
 
 * Litmus tests for Spectre-STL
 Similar to [[https://www.paulkocher.com/doc/MicrosoftCompilerSpectreMitigation.html][Paul Kockers's set of litmus tests for Spectre-PHT]], we
