@@ -136,7 +136,7 @@ void case_6(uint32_t idx) {
 }
 
 
-// Case 6: _insecure_
+// Case 7: _insecure_
 //
 // Same as case_2 but the mask is put in a variable
 uint32_t case7_mask = UINT32_MAX;
